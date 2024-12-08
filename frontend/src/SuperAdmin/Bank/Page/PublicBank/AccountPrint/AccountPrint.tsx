@@ -22,7 +22,6 @@ const AccountPrint: React.FC = () => {
     const { BankURL } = useParams<{ BankURL: string }>();
     // const PaymentInfo = true;
     const [PaymentInfo, SePaymentInfo] = useState<boolean>(true);
-    const [Loading, SetLoading] = useState<boolean>(false);
     // Change the initial state of BankData to an empty object
     const [BankData, SetBankData] = useState<any>({});
 
@@ -31,11 +30,10 @@ const AccountPrint: React.FC = () => {
 
     useEffect(() => {
         const BankFullData = async () => {
-            SetLoading(true);
             try {
 
                 const response = await axios.get(
-                    `http://localhost:5000/api/v1/ReadBank/${BankURL}`
+                    `https://portfolio-pah5.onrender.com/api/v1/ReadBank/${BankURL}`
                 );
                 const bankData = response.data?.data?.[0] || {};
 
@@ -48,7 +46,6 @@ const AccountPrint: React.FC = () => {
                     SePaymentInfo(false)
                 }
 
-                SetLoading(false);
 
 
             } catch (error) {
@@ -162,15 +159,6 @@ const AccountPrint: React.FC = () => {
 
 
 
-    const formatDate = (): string => {
-        const currentDate = new Date();
-        const day = String(currentDate.getDate()).padStart(2, '0');
-        const month = String(currentDate.getMonth() + 1).padStart(2, '0');
-        const year = currentDate.getFullYear();
-        return `${day}/${month}/${year}`;
-    };
-
-    const formattedDate = formatDate();
 
 
 

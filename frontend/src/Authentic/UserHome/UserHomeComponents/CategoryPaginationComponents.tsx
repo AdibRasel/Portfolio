@@ -44,7 +44,7 @@ const CategoryPaginationComponents: React.FC<CategoryPaginationProps> = ({ Categ
     }, []);
 
     const CategoryPagination = async (pageNo: number, perPage: number, searchKeyword: string) => {
-        return axios.get(`http://localhost:5000/api/v1/CategoryPagination/${pageNo}/${perPage}/${searchKeyword}`);
+        return axios.get(`https://portfolio-pah5.onrender.com/api/v1/CategoryPagination/${pageNo}/${perPage}/${searchKeyword}`);
     };
 
     const SearchBtn = async () => {

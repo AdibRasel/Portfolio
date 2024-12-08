@@ -34,7 +34,7 @@ const Home = () => {
         const fetchBankInfo = async () => {
             try {
                 const response = await axios.get<BankInfoResponse>(
-                    "http://localhost:5000/api/v1/AllBankInfo" // Replace with your actual API endpoint
+                    "https://portfolio-pah5.onrender.com/api/v1/AllBankInfo" // Replace with your actual API endpoint
                 );
 
                 if (response.data.status === "Success") {

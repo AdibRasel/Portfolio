@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink,  } from 'react-router-dom';
 import axios from 'axios';
 import Table from 'react-bootstrap/Table';
 import { CiRead } from "react-icons/ci";
@@ -11,7 +11,6 @@ interface ActiveBankPaginationProps {
 }
 
 const ActiveBankPagination: React.FC<ActiveBankPaginationProps> = ({ ActiveBankList }) => {
-    const navigate = useNavigate();
 
     const [Loading, SetLoading] = useState<boolean>(false);
     const [BankListData, SetBankListData] = useState<any[]>([]);
@@ -27,7 +26,7 @@ const ActiveBankPagination: React.FC<ActiveBankPaginationProps> = ({ ActiveBankL
             SetLoading(true);
             try {
                 const response = await axios.get(
-                    `http://localhost:5000/api/v1/ActiveBankList/${currentPage}/${perPage}/${searchKeyword}`
+                    `https://portfolio-pah5.onrender.com/api/v1/ActiveBankList/${currentPage}/${perPage}/${searchKeyword}`
                 );
                 SetBankListDataCount(response.data?.data?.[0]?.Total?.[0]?.count || 0);
                 SetBankListData(response.data?.data?.[0]?.Rows || []);

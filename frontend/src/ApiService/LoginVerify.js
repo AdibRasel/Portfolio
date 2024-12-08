@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BaseURL = "http://localhost:5000/api/v1"
+const BaseURL = "https://portfolio-pah5.onrender.com/api/v1"
 
 
 

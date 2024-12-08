@@ -27,7 +27,7 @@ const ActiveBankPagination: React.FC<ActiveBankPaginationProps> = ({ ActiveBankL
             SetLoading(true);
             try {
                 const response = await axios.get(
-                    `http://localhost:5000/api/v1/ActiveBankList/${currentPage}/${perPage}/${searchKeyword}`
+                    `https://portfolio-pah5.onrender.com/api/v1/ActiveBankList/${currentPage}/${perPage}/${searchKeyword}`
                 );
                 SetBankListDataCount(response.data?.data?.[0]?.Total?.[0]?.count || 0);
                 SetBankListData(response.data?.data?.[0]?.Rows || []);

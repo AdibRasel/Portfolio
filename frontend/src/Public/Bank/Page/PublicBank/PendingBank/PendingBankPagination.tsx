@@ -29,7 +29,7 @@ const PendingBankPagination: React.FC<PendingBankPaginationProps> = ({ PendingBa
             SetLoading(true);
             try {
                 const response = await axios.get(
-                    `http://localhost:5000/api/v1/PendingBankList/${currentPage}/${perPage}/${searchKeyword}`
+                    `https://portfolio-pah5.onrender.com/api/v1/PendingBankList/${currentPage}/${perPage}/${searchKeyword}`
                 );
                 console.log(response);
                 SetBankListDataCount(response.data?.data?.[0]?.Total?.[0]?.count || 0);
@@ -104,7 +104,7 @@ const PendingBankPagination: React.FC<PendingBankPaginationProps> = ({ PendingBa
 
                         try {
                             const response = await axios.get(
-                                `http://localhost:5000/api/v1/PendingBankList/${currentPage}/${perPage}/${searchKeyword}`
+                                `https://portfolio-pah5.onrender.com/api/v1/PendingBankList/${currentPage}/${perPage}/${searchKeyword}`
                             );
                             SetBankListDataCount(response.data?.data?.[0]?.Total?.[0]?.count || 0);
                             SetBankListData(response.data?.data?.[0]?.Rows || []);

@@ -33,7 +33,7 @@ const AccountPrint: React.FC = () => {
             try {
 
                 const response = await axios.get(
-                    `http://localhost:5000/api/v1/ReadBank/${BankURL}`
+                    `https://portfolio-pah5.onrender.com/api/v1/ReadBank/${BankURL}`
                 );
                 const bankData = response.data?.data?.[0] || {};
 
