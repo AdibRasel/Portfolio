@@ -1,0 +1,207 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none !important;
+    color: white;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.CommonBG {
+    background-color: #81689D;
+}
+
+.ActiveColor {
+    color: #FFD0EC;
+}
+
+.CommonColor {
+    color: #1F2544 !important;
+}
+
+
+
+.CommonHover {
+    transition: 500ms;
+}
+
+.CommonHover:hover {
+    color: #81689D;
+}
+
+.CommonBGOne {
+    background-color: #474F7A;
+
+}
+
+.TopBarBG {
+    background-color: #474F7A;
+}
+
+.TopBarNavLink {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+    margin-right: 15px;
+    transition: 500ms;
+    color: white;
+    cursor: pointer;
+}
+
+/* .TopBarNavLink:hover {
+    color: #81689D;
+
+} */
+
+
+.active {
+    color: #FFD0EC !important;
+    font-weight: 600;
+}
+
+
+.Header {
+    width: 100%;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.HeaderLogo {
+    width: 200px;
+    height: 100px;
+}
+
+.HeaderImage {
+    height: 100px;
+
+}
+
+
+.NavBar {
+    /* margin-right: 10px; */
+    color: #47507b;
+    font-weight: 600;
+    transition: 30ms;
+}
+
+.NavBar:hover {
+    font-weight: 600;
+    border-bottom: 3px solid #47507b;
+    color: #82699e;
+}
+
+.PublicNavbarActive a.active {
+    font-weight: 600 !important;
+    border-bottom: 3px solid #47507b;
+    background-color: #ffd0cf !important;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+}
+
+.NavBarTopMenu {
+    padding: 10px;
+    background-color: #82699e;
+    margin-right: 10px;
+    border-radius: 10px;
+    color: #ffd0d1;
+    font-weight: 600;
+    transition: 500ms;
+    letter-spacing: 2px;
+}
+
+.NavBarTopMenu:hover {
+    color: #ffd0d1;
+    background-color: #474f7a;
+}
+
+.SocialItem {
+    transition: 700ms;
+}
+
+.SocialItem:hover {
+    color: #81689D !important;
+}
+
+.Breadcrum {
+    color: black;
+}
+
+.DashboardCardBox {
+    width: 95%;
+    height: 300px;
+    text-align: center;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 6px #333;
+    background-color: #474F7A;
+    color: white;
+    margin-bottom: 10px;
+    transition: 1000ms;
+}
+
+.DashboardCardBox:hover {
+    background-color: #474f7ae7;
+}
+
+.DashboardCardBox button {
+    margin-top: 5px;
+    width: 100%;
+}
+
+
+.DashboardCardBox h1 svg {
+    font-size: 100px;
+}
+
+
+.AuthenticAction {
+    color: white;
+    background-color: #474F7A;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.AuthenticActionDelete {
+    color: white;
+    background-color: #dc3545;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+.ql-editor {
+    max-height: 100%;
+    min-height: 650px;
+    color: black;
+    font-size: 20px;
+}
+
+
+
+.ProfileImage {
+    max-width: 50%;
+    height: auto;
+}
+
+
+
+.DashBoardcard:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in;
+    transition: transform 0.3s ease;
+    transition: transform 0.3s ease-out;
+}

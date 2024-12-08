@@ -1,0 +1,12 @@
+Logo Size
+Width: 320px
+Height: 150px
+
+Logo Info Size
+Width: 725px
+Height: 90px
+
+
+Slider Size
+Width: 750px
+Height: 420px
