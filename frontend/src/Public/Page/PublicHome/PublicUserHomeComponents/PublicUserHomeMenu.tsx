@@ -1,5 +1,5 @@
 
-import { NavLink, useNavigate, useParams } from 'react-router-dom';
+import { NavLink, } from 'react-router-dom';
 
 
 import Container from 'react-bootstrap/Container';
@@ -15,8 +15,12 @@ const PublicUserHomeMenu = () => {
 
 
 
-    const { BloogID } = useParams();
-    const [BloogIDis, SetBloogID] = useState<boolean>(false);
+    // const [BloogIDis, SetBloogID] = useState<boolean>(false);
+
+
+    const BloogIDis = false;
+   
+    
 
     // if(BloogID === "BloogID"){
     //     SetBloogID(true)
@@ -37,7 +41,6 @@ const PublicUserHomeMenu = () => {
 
 
 
-    const navigate = useNavigate();
     const [isScrolled, setIsScrolled] = useState(false);
     const handleScroll = () => {
         const scrolled = window.scrollY > 0;
@@ -45,11 +48,7 @@ const PublicUserHomeMenu = () => {
     };
     window.addEventListener('scroll', handleScroll);
 
-    const LogOut = () => {
-        localStorage.clear();
-        navigate('/Home');
-        window.location.reload();
-    }
+    
 
     return (<>
         {/* Navbar Menu start  */}

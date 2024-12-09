@@ -5,7 +5,6 @@ import { FaEdit } from "react-icons/fa";
 import { MdOutlineDateRange } from "react-icons/md"
 import { FaBookReader } from "react-icons/fa";
 import { RecentTenPost } from 'ApiService/PublicAPIService/PublicAPIService'
-import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -16,7 +15,6 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 const RecentTenPostComponents = () => {
 
-    const navigate = useNavigate();
     const [LoadingRecentPost, SetLoadingRecentPost] = useState<boolean>(false);
 
 

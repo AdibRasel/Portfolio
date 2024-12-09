@@ -47,8 +47,6 @@ const RegistrationBank: React.FC = () => {
     const [AcMobileNumber, SetAcMobileNumber] = useState<string>("");
     const [AccountAllInfo, SetAccountAllInfo] = useState<string>("");
 
-    const [ReferenceName, SetReferenceName] = useState<string>("");
-    const [ReferenceNumber, SetReferenceNumber] = useState<string>("");
 
     const [isSubmitHovered, setIsSubmitHovered] = useState(false);
     const [isPrintHovered, setIsPrintHovered] = useState(false);
@@ -87,7 +85,6 @@ const RegistrationBank: React.FC = () => {
     };
 
     const [URLValue, setURLValue] = useState('');
-    const [URLValidation, setURLValidation] = useState('');
 
 
     const BankNameRef = useRef<HTMLInputElement>(null);
@@ -113,7 +110,6 @@ const RegistrationBank: React.FC = () => {
         setBorderColor(selectedColor);
     };
 
-    const [InputValadation, SetInputValadation] = useState<string>("");
 
     const [URLValadation, SetURLValadation] = useState<string>("");
     const [BankNameValadation, SetBankNameValadation] = useState<string>("");
@@ -129,7 +125,6 @@ const RegistrationBank: React.FC = () => {
     const [BankLogoValadation, SetBankLogoValadation] = useState<string>("");
     const [OfficeImageValadation, SetOfficeImageValadation] = useState<string>("");
 
-    const [AccountNumberValadation, SetAccountNumberValadation] = useState<string>("");
 
 
     const [NumberOneImoChecked, setNumberOneImoChecked] = useState(false);
@@ -240,7 +235,7 @@ const RegistrationBank: React.FC = () => {
             SetManagerNameValadation("");
         }
 
-        // Validate SetInputValadation
+        // Validate SetInputVala ation
         if (!URLRef.current?.value) {
             SetURLValadation("URL is required");
             isValid = false;
@@ -266,7 +261,6 @@ const RegistrationBank: React.FC = () => {
 
         // If all validations pass
         if (isValid) {
-            SetInputValadation(""); // Clear any general validation error
 
             // const formData = {
             //     BankLogo,
@@ -369,11 +363,12 @@ const RegistrationBank: React.FC = () => {
 
                         } else if (BankRegistrations.status === "server error") {
 
-
+                            console.log("serverr error")
                         }
 
                     })
                     .catch((error) => {
+                        console.log(error)
                         // Handle any errors
                     });
 
@@ -390,8 +385,7 @@ const RegistrationBank: React.FC = () => {
             // SetReferenceNumber(Reference_Number);
 
 
-        } else {
-        }
+        } 
     };
 
 

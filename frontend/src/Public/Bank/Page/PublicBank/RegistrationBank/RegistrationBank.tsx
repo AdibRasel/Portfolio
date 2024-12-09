@@ -336,11 +336,13 @@ const RegistrationBank: React.FC = () => {
 
                         } else if (BankRegistrations.status === "server error") {
 
+                            console.log("ok")
 
                         }
 
                     })
                     .catch((error) => {
+                        console.log(error)
                         // Handle any errors
                     });
 
@@ -357,8 +359,7 @@ const RegistrationBank: React.FC = () => {
             // SetReferenceNumber(Reference_Number);
 
 
-        } else {
-        }
+        } 
     };
 
 

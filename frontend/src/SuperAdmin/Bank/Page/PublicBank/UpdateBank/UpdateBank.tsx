@@ -7,7 +7,6 @@ import { Form } from "react-bootstrap"; // Importing Form from react-bootstrap
 import { ActiveBankMailSend } from "../APIServiceBank/APIServiceBank"
 import { useParams } from 'react-router-dom';
 
-import { useNavigate } from 'react-router-dom';
 
 // import {UpdateBank, ReadWithURL} from "../APIServiceBank/APIServiceBank"
 import { UpdateBankinfo, ReadWithURL } from "../APIServiceBank/APIServiceBank"
@@ -53,7 +52,6 @@ interface BankData {
 const UpdateBank = () => {
 
 
-    const navigate = useNavigate();
 
 
     const [Loading, SetLoading] = useState<boolean>(false);
@@ -169,9 +167,7 @@ const UpdateBank = () => {
 
     const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
-    const handleDateChange = (value: Date | null): void => {
-        setSelectedDate(value);
-    };
+
 
 
     const serviceTypeRef = useRef<HTMLSelectElement>(null);
@@ -251,6 +247,8 @@ const UpdateBank = () => {
                 }
             } catch (error) {
                 console.error('Error fetching data:', error);
+                console.log(URLValue)
+                console.log(selectedDate)
             }
         };
 
@@ -288,7 +286,6 @@ const UpdateBank = () => {
 
 
 
-    const [ExistBank, SetExistBank] = useState<string>("");
 
 
     // Submit Button
@@ -494,11 +491,12 @@ const UpdateBank = () => {
 
                     } else if (UpdateBankinfo.status === "server error") {
 
-
+                        console.log(borderColor)
                     }
 
                 })
                 .catch((error) => {
+                    console.log(error)
                     // Handle any errors
                 });
 
@@ -547,8 +545,7 @@ const UpdateBank = () => {
             }
 
 
-        } else {
-        }
+        } 
     };
 
 

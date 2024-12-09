@@ -13,7 +13,6 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import { useNavigate } from 'react-router-dom';
 
 
 
@@ -51,8 +50,6 @@ import PublicPostPaginationComponents from './PublicUserHomeComponents/PublicPos
 
 const PublicUserHome = () => {
 
-  const navigate = useNavigate();
-  const [Loading, SetLoading] = useState<boolean>(false);
   const [LoadingRecentCategory, SetLoadingRecentCategory] = useState<boolean>(false);
 
 
@@ -65,7 +62,6 @@ const PublicUserHome = () => {
 
   // useEffect start
   useEffect(() => {
-    SetLoading(true)
 
     const fetchData = async () => {
       try {
@@ -116,9 +112,7 @@ const PublicUserHome = () => {
 
       } catch (error) {
         console.error('Error fetching data:', error);
-        SetLoading(true)
       }
-      SetLoading(false)
 
     };
 
@@ -144,11 +138,7 @@ const PublicUserHome = () => {
 
 
 
-  const LogOut = () => {
-    localStorage.clear();
-    navigate('/Home');
-    window.location.reload();
-  }
+  
 
 
   function formatDate() {

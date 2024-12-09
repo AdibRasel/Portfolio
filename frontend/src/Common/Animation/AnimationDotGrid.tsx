@@ -1,13 +1,13 @@
+import React from 'react';
 import anime from 'animejs';
 
+const Grid_Width = 20; // Set grid width
+const Grid_Height = 10; // Set grid height
 
+const AnimationDotGrid: React.FC = () => {
+  const handleDotClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const index = Number(e.currentTarget.dataset.index); // Convert index to number
 
-
-const Grid_Width = 200;
-const Grid_Height = 20;
-
-const AnimationDotGrid = () => {
-  const handleDotClick = (e: any) => {
     anime({
       targets: ".dot-point",
       scale: [
@@ -24,12 +24,12 @@ const AnimationDotGrid = () => {
       ],
       delay: anime.stagger(100, {
         grid: [Grid_Width, Grid_Height],
-        from: e.target.dataset.index,
+        from: index, // Use the converted index
       }),
     });
   };
 
-  const dots = [];
+  const dots: React.ReactNode[] = []; // Explicitly type the array
   let index = 0;
 
   for (let i = 0; i < Grid_Width; i++) {
@@ -53,14 +53,17 @@ const AnimationDotGrid = () => {
   }
 
   return (
-    <>
-      <div
-        style={{ display: 'grid', gridTemplateColumns: `repeat(${Grid_Width}, 1fr)` }}
-        className="m-auto"
-      >
-        {dots}
-      </div>
-    </>
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: `repeat(${Grid_Width}, 1fr)`,
+        gap: '5px', // Optional gap for better spacing
+      }}
+      className="m-auto"
+    >
+      {dots}
+    </div>
   );
-}
-export default AnimationDotGrid
+};
+
+export default AnimationDotGrid;

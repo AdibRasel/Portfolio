@@ -13,7 +13,6 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import { useNavigate } from 'react-router-dom';
 
 
 
@@ -30,7 +29,6 @@ import PublicUserHomeMenu from './PublicUserHomeComponents/PublicUserHomeMenu';
 
 const PublicUserHomeLayout = (props: any) => {
 
-    const navigate = useNavigate();
 
 
 
@@ -61,15 +59,6 @@ const PublicUserHomeLayout = (props: any) => {
 
     const FooterText = localStorage.getItem('FooterText');
 
-
-
-
-
-    const LogOut = () => {
-        localStorage.clear();
-        navigate('/Home');
-        window.location.reload();
-    }
 
 
     function formatDate() {

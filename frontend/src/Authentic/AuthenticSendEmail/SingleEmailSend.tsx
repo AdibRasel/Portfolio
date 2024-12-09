@@ -12,7 +12,6 @@ const SingleEmailSend: React.FC = () => {
   const subjectRef = useRef<HTMLInputElement>(null);
   const [currentEmail, setCurrentEmail] = useState<any>("");
   const [currentPassword, setCurrentPassword] = useState<any>("");
-  const [allEmail, setAllEmail] = useState<string[]>([]); // Store emails in an array
 
   useEffect(() => {
     const storedEmailData: any = localStorage.getItem('SendFromEmail');
@@ -36,7 +35,7 @@ const SingleEmailSend: React.FC = () => {
     UserOuth()
 
     try {
-      const url = "http://localhost:5000/api/v1/MailSend";
+      const url = "https://portfolio-pah5.onrender.com/api/v1/MailSend";
       const to = toRef.current?.value || "";
       const subject = subjectRef.current?.value || "";
 
@@ -49,6 +48,7 @@ const SingleEmailSend: React.FC = () => {
           html: messageValue,
         };
         console.log(postBody);
+        console.log(to);
         return axios.post(url, postBody);
       });
       await Promise.all(promises);

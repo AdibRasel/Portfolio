@@ -63,7 +63,7 @@ const ActiveMailService = async (req, res) => {
                                 <h3 style="font-size: 16px; color: #007bff; margin-top: 30px;">Access Your Bank Software:</h3>
                                 <p style="font-size: 14px; color: #555;">You can access your bank's software using the following link:</p>
                                 <p style="font-size: 16px; color: #007bff; font-weight: bold;">
-                                    <a href="https://DomainName/${BankURL}" target="_blank" style="color: #007bff; text-decoration: none;">https://DomainName/${BankURL}</a>
+                                    <a href="https://adibrasel.github.io/Portfolio/${BankURL}" target="_blank" style="color: #007bff; text-decoration: none;">https://adibrasel.github.io/Portfolio/${BankURL}</a>
                                 </p>
                                 <p style="font-size: 14px; color: #555;">If you have any questions, feel free to contact us.</p>
                             </td>

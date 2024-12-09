@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { useNavigate, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 
 
 interface HomePageData {
@@ -29,7 +29,6 @@ interface HomePageData {
 }
 
 const HomePageUpdate: React.FC = () => {
-    const navigate = useNavigate();
 
     const [loading, setLoading] = useState<boolean>(true);
     const [data, setData] = useState<HomePageData | null>(null);
@@ -73,11 +72,7 @@ const HomePageUpdate: React.FC = () => {
             reader.readAsDataURL(file);
         }
     };
-    const intervalTime = 1000;
-    const navigatePage = () => {
-        navigate('/SoftwareSettings/HomePageSettings');
-    };
-
+    
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();

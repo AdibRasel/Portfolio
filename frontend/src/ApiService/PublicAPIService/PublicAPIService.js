@@ -16,13 +16,7 @@ export async function Allinfo() {
 
         return { status: "Allinfo Show Success", Allinfo: Res }
 
-        if (Res.data.data.status === "success") {
-            return { status: "Allinfo Show Faild" }
-        } else {
-            return { status: "Allinfo Show Success", Allinfo: Res }
-        }
-
-
+       
     }
     catch (error) {
         return { status: "error", error: error }

@@ -5,11 +5,6 @@ import { useEffect, useState } from "react";
 import Card from 'react-bootstrap/Card';
 import { NavLink } from "react-router-dom";
 
-interface ApiResponse {
-    status: string;
-    data?: HomePageData;  // Optional, in case of errors
-    error?: unknown;      // Optional error field for handling errors
-}
 
 interface HomePageData {
     _id: string;

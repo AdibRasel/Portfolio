@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate,  } from "react-router-dom";
 import UserHomeLayout from "./UserHomeLayout";
 import { SuperAdminCretedHomeAllInfo, UpdateUserHomePageInfo, UserHomeAllInfo, UserHomePageInfoCreate } from "ApiService/UserHomeApiService/UserHomeApiService";
 
@@ -38,7 +38,6 @@ const UserHomePageUpdate: React.FC = () => {
     const [formData, setFormData] = useState<Partial<HomePageData>>({});
     const [updateStatus, setUpdateStatus] = useState<string | null>(null);
     const [previewImages, setPreviewImages] = useState<{ [key: string]: string }>({});
-    const { id } = useParams();
 
 
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink,  } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import { FaEdit } from "react-icons/fa";
 import { MdOutlineDateRange } from "react-icons/md";
@@ -11,8 +11,6 @@ interface CategoryPaginationProps {
 }
 
 const CategoryPaginationComponents: React.FC<CategoryPaginationProps> = ({ CategoryPaginationDataLimit }) => {
-    const navigate = useNavigate();
-    const [Loading, SetLoading] = useState<boolean>(false);
     const [LoadingSearchBtn, SetLoadingSearchBtn] = useState<boolean>(false);
     const [LoadingCategoryOverview, SetLoadingCategoryOverview] = useState<boolean>(false);
     const [LoadingPagination, SetLoadingPagination] = useState<boolean>(false);
@@ -26,7 +24,6 @@ const CategoryPaginationComponents: React.FC<CategoryPaginationProps> = ({ Categ
     // Fetch data when component mounts and when pagination parameters change
     useEffect(() => {
         const fetchData = async () => {
-            SetLoading(true);
             SetLoadingCategoryOverview(true);
             try {
                 const response = await CategoryPagination(currentPage, perPage, searchKeyword);
@@ -35,7 +32,6 @@ const CategoryPaginationComponents: React.FC<CategoryPaginationProps> = ({ Categ
             } catch (error) {
                 console.error('Error fetching data:', error);
             } finally {
-                SetLoading(false);
                 SetLoadingCategoryOverview(false);
             }
         };

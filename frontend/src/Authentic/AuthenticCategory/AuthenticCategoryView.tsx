@@ -126,7 +126,7 @@ const AuthenticCategoryView = () => {
                             <button className='btn btn-outline-primary my-2' style={{ width: "100%" }}>Create Post</button>
                         </NavLink>
 
-                        <p>{CategoryInfo[0]?.CategoryTitle} // All Post List</p>
+                        <p>{CategoryInfo[0]?.CategoryTitle} All Post List</p>
 
                         <hr />
 

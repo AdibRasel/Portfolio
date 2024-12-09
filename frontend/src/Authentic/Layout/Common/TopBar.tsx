@@ -13,11 +13,6 @@ const TopBar = () => {
 
   const navigate = useNavigate();
 
-  const Login = () => {
-    localStorage.clear();
-    navigate('/Home');
-    window.location.reload();
-  }
 
 
   const LogOut = () => {

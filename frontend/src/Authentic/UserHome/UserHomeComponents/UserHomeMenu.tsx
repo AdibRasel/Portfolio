@@ -1,5 +1,5 @@
 
-import { NavLink, useNavigate, useParams } from 'react-router-dom';
+import { NavLink, useNavigate,  } from 'react-router-dom';
 
 
 import Container from 'react-bootstrap/Container';
@@ -15,7 +15,6 @@ const UserHomeMenu = () => {
 
 
 
-    const { BloogID } = useParams();
     const [BloogIDis, SetBloogID] = useState<boolean>(false);
 
     // if(BloogID === "BloogID"){
@@ -49,6 +48,7 @@ const UserHomeMenu = () => {
         localStorage.clear();
         navigate('/Home');
         window.location.reload();
+        SetBloogID(true);
     }
 
     return (<>

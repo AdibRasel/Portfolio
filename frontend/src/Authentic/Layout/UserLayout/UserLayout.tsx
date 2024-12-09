@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom';
 
 import Container from 'react-bootstrap/Container';
@@ -60,12 +60,11 @@ const UserLayout = (props: any) => {
 
 
     {/* Start NavBarTop */ }
-    const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
             const scrolled = window.scrollY > 0;
-            setIsScrolled(scrolled);
+            console.log(scrolled);
         };
 
         window.addEventListener('scroll', handleScroll);

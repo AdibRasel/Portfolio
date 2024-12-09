@@ -62,7 +62,6 @@ const AuthenticCategoryUpdate = () => {
 
     const { id } = useParams();
 
-    const [OldData, setOldData] = useState<any[]>([]);
 
     const [OldTitle, SetOldTitle] = useState("");
     const [OldThumbnail, SetOldThumbnail] = useState("");
@@ -77,7 +76,6 @@ const AuthenticCategoryUpdate = () => {
         const fetchData = async () => {
             try {
                 const response: any = await CategoryFullDetails(PostBody);
-                setOldData(response.CategoryInfo.data.data);
 
                 console.log(response)
 
@@ -135,7 +133,6 @@ const AuthenticCategoryUpdate = () => {
                         });
                         navigate('/AuthenticCategory');
                         SetLoading(false)
-                        const dataToSend = 'Hello from Parent';
                         // <AuthenticCategory data={dataToSend}  />
                     }
 

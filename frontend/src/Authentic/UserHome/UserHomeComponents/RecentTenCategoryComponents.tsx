@@ -5,7 +5,6 @@ import { FaEdit } from "react-icons/fa";
 import { MdOutlineDateRange } from "react-icons/md"
 import { FaBookReader } from "react-icons/fa";
 import { RecentTenCategory } from 'ApiService/PublicAPIService/PublicAPIService'
-import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -18,8 +17,6 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 const RecentTenCategoryComponents = () => {
 
-    const navigate = useNavigate();
-    const [Loading, SetLoading] = useState<boolean>(false);
     const [LoadingRecentCategory, SetLoadingRecentCategory] = useState<boolean>(false);
 
 
@@ -32,7 +29,6 @@ const RecentTenCategoryComponents = () => {
 
     // useEffect start
     useEffect(() => {
-        SetLoading(true)
 
         const fetchData = async () => {
             try {
@@ -47,9 +43,7 @@ const RecentTenCategoryComponents = () => {
 
             } catch (error) {
                 console.error('Error fetching data:', error);
-                SetLoading(true)
             }
-            SetLoading(false)
 
         };
 

@@ -136,7 +136,6 @@ const AuthenticUpdatePost = () => {
                         });
                         navigate('/AuthenticCategoryView/' + Category);
                         SetLoading(false)
-                        const dataToSend = 'Hello from Parent';
                         // <AuthenticPost data={dataToSend}  />
                     }
 

@@ -52,7 +52,7 @@ const Registration = () => {
 
 
             if (FullName.length <= 2 || Mobile.length <= 10 || Mobile.length >= 12 || Email.length <= 2 || Password.length <= 5) {
-
+                console.log("ok")
             } else {
 
                 SetLoading(true)

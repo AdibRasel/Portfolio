@@ -16,7 +16,6 @@ const Login = () => {
     const EmailRef = useRef<HTMLInputElement>(null);
     const PasswordRef = useRef<HTMLInputElement>(null);
 
-    const [Loading, SetLoading] = useState(false);
 
 
     const [LoginError, SetLoginError] = useState("");
@@ -41,10 +40,9 @@ const Login = () => {
 
 
             if (Email.length <= 2 || Password.length <= 5) {
-
+                console.log("ök");
             } else {
 
-                SetLoading(true)
 
                 try {
                     const registrationAPICall = await LoginRequest(postBody);
@@ -88,7 +86,6 @@ const Login = () => {
                 } catch (error) {
                     console.log("Registration failed:", error);
                 }
-                SetLoading(false)
 
 
             }

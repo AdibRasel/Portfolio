@@ -28,7 +28,6 @@ const MultipleEmailSend = () => {
         setCategory(EmailCategory);
     }, []);
 
-    const notify = () => toast('Here is your toast.');
 
     const sendButtonHandler = () => {
         const EmailSendURL = "https://portfolio-pah5.onrender.com/api/v1/MailSend";

@@ -10,7 +10,6 @@ import Calendar from 'react-calendar'
 
 import { FaBookReader } from "react-icons/fa";
 
-import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 
 import { FaEdit } from "react-icons/fa";
@@ -33,7 +32,6 @@ const PublicReadBloog = () => {
 
 
 
-    const navigate = useNavigate();
     const [Loading, SetLoading] = useState<boolean>(false);
     const [LoadingPostUnderCategoryDetails, SetLoadingPostUnderCategoryDetails] = useState<boolean>(false);
     const [LoadingCategoryUnderAllPosts, SetLoadingCategoryUnderAllPosts] = useState<boolean>(false);

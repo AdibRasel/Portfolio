@@ -10,19 +10,13 @@ const BankPayment: React.FC = () => {
 
 
 
-
-    const BankName = "Bank Asia";
-    const StartDate = "01/01/2024";
-    const EndDate = "01/01/2025"
     const { BankURL } = useParams<{ BankURL: string }>();
-    const [Loading, SetLoading] = useState<boolean>(false);
     // Change the initial state of BankData to an empty object
     const [BankData, SetBankData] = useState<any>({});
 
 
     useEffect(() => {
         const BankFullData = async () => {
-            SetLoading(true);
             try {
 
                 const response = await axios.get(
@@ -33,7 +27,6 @@ const BankPayment: React.FC = () => {
                 SetBankData(bankData);
 
 
-                SetLoading(false);
 
 
             } catch (error) {

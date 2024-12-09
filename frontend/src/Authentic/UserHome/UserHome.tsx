@@ -51,12 +51,10 @@ import UserSlider from './UserHomeComponents/UserSlider'
 const UserHome = () => {
 
   const navigate = useNavigate();
-  const [Loading, SetLoading] = useState<boolean>(false);
   const [LoadingRecentCategory, SetLoadingRecentCategory] = useState<boolean>(false);
 
 
   const [Category, SetCategory] = useState<any[]>([]);
-  const [HomePageInfo, SetHomePageAllInfo] = useState<any[]>([]);
 
 
 
@@ -65,7 +63,6 @@ const UserHome = () => {
 
   // useEffect start
   useEffect(() => {
-    SetLoading(true)
 
     const fetchData = async () => {
       try {
@@ -82,7 +79,6 @@ const UserHome = () => {
 
         if (HomePageAllInfos?.UserHomeinfo?.data?.data?.[0]) {
 
-          SetHomePageAllInfo(HomePageAllInfos?.UserHomeinfo?.data?.data?.[0]);
           localStorage.setItem('HomePageInfoID', HomePageAllInfos?.UserHomeinfo?.data?.data?.[0]?._id);
           localStorage.setItem('AuthorName', HomePageAllInfos?.UserHomeinfo?.data?.data?.[0]?.AuthorName);
           localStorage.setItem('Title', HomePageAllInfos?.UserHomeinfo?.data?.data?.[0]?.Title);
@@ -104,7 +100,6 @@ const UserHome = () => {
 
         } else if (SuperAdminCretedHomeAllInfos?.UserHomeinfo?.data?.data[0]) {
 
-          SetHomePageAllInfo(SuperAdminCretedHomeAllInfos?.UserHomeinfo?.data?.data[0]);
           localStorage.setItem('Logo', SuperAdminCretedHomeAllInfos?.UserHomeinfo?.data?.data[0]?.Logo);
           localStorage.setItem('LogoInfoImage', SuperAdminCretedHomeAllInfos?.UserHomeinfo?.data?.data[0]?.LogoInfoImage);
           localStorage.setItem('SliderOne', SuperAdminCretedHomeAllInfos?.UserHomeinfo?.data?.data[0]?.SliderOne);
@@ -138,9 +133,7 @@ const UserHome = () => {
 
       } catch (error) {
         console.error('Error fetching data:', error);
-        SetLoading(true)
       }
-      SetLoading(false)
 
     };
 
