@@ -100,10 +100,10 @@ Mongose.connect(UriOne) // Adjust the connection string as needed
 
 
 
-// ====================== start প্রতিদিন দুপুর ১২ টায় নিচের ফাংশন কল হবে। ========================
+// ====================== start প্রতিদিন ৬ টায় নিচের ফাংশন কল হবে। ========================
 
-// প্রতিদিন দুপুর ১২ টায় ১ মাস বা ১ বছরের মেয়াদ শেষ হওয়া সার্ভিস নিষ্ক্রিয় করুন
-cron.schedule("0 12 * * *", async () => {  // প্রতিদিন দুপুর ১২ টায়
+// প্রতিদিন দুপুর ৬ টায় ১ মাস বা ১ বছরের মেয়াদ শেষ হওয়া সার্ভিস নিষ্ক্রিয় করুন
+cron.schedule("0 6 * * *", { timezone: "Asia/Dhaka" }, async () => { // প্রতিদিন দুপুর ৬ টায়
     console.log("Running scheduled task to check expired services...");
     try {
         const today = new Date();
