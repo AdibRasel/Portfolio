@@ -93,7 +93,7 @@ Router.post("/HomePageInfoCreate", AuthVerifyMiddleware, HomePageInfoController.
 // Home Page Info See All Details
 Router.get("/HomePageInfoSeeAllDetails", HomePageInfoController.HomePageInfoSeeAllDetails);
 // Home Page Info Update
-Router.post("/HomePageInfoUpdate/:URL",AuthVerifyMiddleware, HomePageInfoController.HomePageInfoUpdate);
+Router.post("/HomePageInfoUpdate/:id",AuthVerifyMiddleware, HomePageInfoController.HomePageInfoUpdate);
 
 
 
