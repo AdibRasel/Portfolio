@@ -100,11 +100,12 @@ Mongose.connect(UriOne) // Adjust the connection string as needed
 
 
 
-// ====================== start প্রতিদিন ৬ টায় নিচের ফাংশন কল হবে। ========================
-
-// প্রতিদিন দুপুর ৬ টায় ১ মাস বা ১ বছরের মেয়াদ শেষ হওয়া সার্ভিস নিষ্ক্রিয় করুন
-cron.schedule("0 6 * * *", { timezone: "Asia/Dhaka" }, async () => { // প্রতিদিন দুপুর ৬ টায়
-    console.log("Running scheduled task to check expired services...");
+// // ====================== start প্রতিদিন দুপুর ১২ টায় নিচের ফাংশন কল হবে। ========================
+// সার্ভার স্টার্ট হলে বা যেকোনো সময় একবার চালানোর জন্য ফাংশন
+// সার্ভিস যাচাই এবং নিষ্ক্রিয় করার ফাংশন
+// সার্ভিস যাচাই এবং নিষ্ক্রিয় করার ফাংশন
+async function checkAndDeactivateExpiredServices() {
+    console.log("Running task to check expired services...");
     try {
         const today = new Date();
 
@@ -140,10 +141,90 @@ cron.schedule("0 6 * * *", { timezone: "Asia/Dhaka" }, async () => { // প্�
             console.log("No expired services found.");
         }
     } catch (error) {
-        console.error("Error running scheduled task:", error);
+        console.error("Error running task:", error);
     }
-});
-// ====================== end প্রতিদিন দুপুর ১২ টায় নিচের ফাংশন কল হবে। ========================
+}
+
+// প্রতি মিনিটে সময় চেক করা হবে
+function startDailyCheck() {
+    setInterval(async () => {
+        const now = new Date();
+        // সময় যদি দুপুর ১২:০০ হয়
+        if (now.getHours() === 12 && now.getMinutes() === 0) {
+            console.log("It's 12:00 PM. Running the task...");
+            await checkAndDeactivateExpiredServices();
+        }
+    }, 60000); // প্রতি মিনিটে চেক করে
+}
+
+// সার্ভার শুরু হলে একবার ফাংশন চালু করুন
+async function init() {
+    console.log("Initializing service check...");
+    await checkAndDeactivateExpiredServices(); // সার্ভার চালুর সময় একবার চালান
+    startDailyCheck(); // দৈনিক চেক ফাংশন চালু করুন
+}
+
+// সার্ভার শুরু হলে init() কল করুন
+init();
+
+// // ====================== end প্রতিদিন দুপুর ১২ টায় নিচের ফাংশন কল হবে। ========================
+// সার্ভার স্টার্ট হলে বা যেকোনো সময় একবার চালানোর জন্য ফাংশন
+
+
+
+
+
+
+
+
+
+
+
+
+// // প্রতিদিন দুপুর ১২ টায় ১ মাস বা ১ বছরের মেয়াদ শেষ হওয়া সার্ভিস নিষ্ক্রিয় করুন
+// cron.schedule("0 6 * * *", { timezone: "Asia/Dhaka" }, async () => { // প্রতিদিন দুপুর ১২ টায়
+//     console.log("Running scheduled task to check expired services...");
+//     try {
+//         const today = new Date();
+
+//         // ১ মাসের সার্ভিস মেয়াদ শেষ হওয়া সার্ভিস খুঁজে বের করুন
+//         const expiredMonthlyServices = await BankModel.find({
+//             EndDate: { $lt: today }, // EndDate আজকের তারিখের আগে হলে
+//             ServiceType: "Free", // "Free" সার্ভিসের জন্য
+//         });
+
+//         if (expiredMonthlyServices.length > 0) {
+//             // মাসের সার্ভিস নিষ্ক্রিয় করে আপডেট করুন
+//             await BankModel.updateMany(
+//                 { _id: { $in: expiredMonthlyServices.map(service => service._id) } },
+//                 { $set: { ServiceType: "Expired", PaymentStatus: "Pending", StatusBank: "Pending" } }
+//             );
+//             console.log(`Deactivated ${expiredMonthlyServices.length} expired free services.`);
+//         }
+
+//         // ১ বছরের সার্ভিস মেয়াদ শেষ হওয়া সার্ভিস খুঁজে বের করুন
+//         const expiredYearlyServices = await BankModel.find({
+//             EndDate: { $lt: today }, // EndDate আজকের তারিখের আগে হলে
+//             ServiceType: { $in: ["Yearly", "One-time"] }, // "Yearly" অথবা "One-time" সার্ভিস
+//         });
+
+//         if (expiredYearlyServices.length > 0) {
+//             // ১ বছরের সার্ভিস নিষ্ক্রিয় করে আপডেট করুন
+//             await BankModel.updateMany(
+//                 { _id: { $in: expiredYearlyServices.map(service => service._id) } },
+//                 { $set: { ServiceType: "Expired", PaymentStatus: "Pending", StatusBank: "Pending" } }
+//             );
+//             console.log(`Deactivated ${expiredYearlyServices.length} expired yearly/one-time services.`);
+//         } else {
+//             console.log("No expired services found.");
+//         }
+//     } catch (error) {
+//         console.error("Error running scheduled task:", error);
+//     }
+// });
+
+ // ====================== end প্রতিদিন দুপুর ১২ টায় নিচের ফাংশন কল হবে। ========================
+
 
 
 // // ====================== start প্রতি ১ মাস পর পর নিচের ফাংশন কল হবে। ========================
@@ -152,7 +233,7 @@ cron.schedule("0 6 * * *", { timezone: "Asia/Dhaka" }, async () => { // প্�
 //     console.log("Running scheduled task to check expired services...");
 //     try {
 //         const today = new Date();
-        
+
 //         // ১ মাসের সার্ভিস মেয়াদ শেষ হওয়া সার্ভিস খুঁজে বের করুন
 //         const expiredMonthlyServices = await BankModel.find({
 //             EndDate: { $lt: today }, // EndDate আজকের তারিখের আগে হলে

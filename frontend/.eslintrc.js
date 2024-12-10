@@ -14,6 +14,7 @@ module.exports = {
         "plugin:@typescript-eslint/recommended",
     ],
     rules: {
+        "@typescript-eslint/no-explicit-any": "off",
         "react/react-in-jsx-scope": "off", // Disable React in scope for React 17+
         "react/prop-types": "off", // Disable prop-types for TypeScript
         "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],

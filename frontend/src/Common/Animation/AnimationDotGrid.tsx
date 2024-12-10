@@ -1,8 +1,8 @@
 import React from 'react';
 import anime from 'animejs';
 
-const Grid_Width = 20; // Set grid width
-const Grid_Height = 10; // Set grid height
+const Grid_Width = 200; // Set grid width
+const Grid_Height = 20; // Set grid height
 
 const AnimationDotGrid: React.FC = () => {
   const handleDotClick = (e: React.MouseEvent<HTMLDivElement>) => {
