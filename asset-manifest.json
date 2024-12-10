@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Portfolio/static/css/main.fd380f41.css",
+    "main.js": "/Portfolio/static/js/main.251b2dc5.js",
+    "static/media/GermanyLanguage.jpg": "/Portfolio/static/media/GermanyLanguage.d3cbbc2091ed6fba7974.jpg",
+    "static/media/BankManagment.gif": "/Portfolio/static/media/BankManagment.c713c015f2d140b92a84.gif",
+    "static/media/SliderThree.jpg": "/Portfolio/static/media/SliderThree.b0736eb9f1cc5b44a8ed.jpg",
+    "static/media/SliderOne.jpg": "/Portfolio/static/media/SliderOne.ccadd54457af1e0b7fdf.jpg",
+    "static/media/SliderTwo.jpg": "/Portfolio/static/media/SliderTwo.f83dc15c1ea905d22681.jpg",
+    "static/media/Header-Image.png": "/Portfolio/static/media/Header-Image.ecf2a4cec631293cf917.png",
+    "static/media/LogoInfo.png": "/Portfolio/static/media/LogoInfo.ecf2a4cec631293cf917.png",
+    "static/media/PaymentLockBank.gif": "/Portfolio/static/media/PaymentLockBank.3508a5c44074af8b448c.gif",
+    "static/media/ImoIcon.png": "/Portfolio/static/media/ImoIcon.06910d8fc74ef2da0270.png",
+    "static/media/Logo.png": "/Portfolio/static/media/Logo.107f313974cb10e57189.png",
+    "static/media/EmailIcon.png": "/Portfolio/static/media/EmailIcon.9800434dcd844b3dca3f.png",
+    "static/media/WhatsppIcon.png": "/Portfolio/static/media/WhatsppIcon.0fa9689266b64db457ec.png",
+    "index.html": "/Portfolio/index.html",
+    "main.fd380f41.css.map": "/Portfolio/static/css/main.fd380f41.css.map",
+    "main.251b2dc5.js.map": "/Portfolio/static/js/main.251b2dc5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fd380f41.css",
+    "static/js/main.251b2dc5.js"
+  ]
+}
