@@ -1,5 +1,6 @@
 const HomePageInfoModel = require("../../Model/HomePageInfoModel/HomePageInfoModel");
 const AllDetailsService = require("../../Service/Common/AllDetailsService");
+const HomePageInfoUpdate = require("../../Service/Common/HomePageInfoUpdate");
 const IDWithUpdateService = require("../../Service/Common/IDWithUpdateService");
 const UserSeeUserInfoService = require("../../Service/Common/UserSeeUserInfoService");
 const CreateService = require("../../Service/CreateService/CreateService");
@@ -31,6 +32,6 @@ exports.UserSeeUserHomePageInfo = async (req, res) => {
 };
 
 exports.HomePageInfoUpdate= async (req, res) => {
-    let Result = await IDWithUpdateService(req, HomePageInfoModel);
+    let Result = await HomePageInfoUpdate(req, HomePageInfoModel);
     res.status(200).json(Result);
 };
