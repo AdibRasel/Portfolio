@@ -1,4 +1,4 @@
-0ioconst Mongoose = require("mongoose");[pml7jb52bb,jmhj66u3jmui1m ]
+const Mongoose = require("mongoose");
 
 const IDWithUpdateService = async (Request, DataModel) => {
     try {
@@ -16,8 +16,11 @@ const IDWithUpdateService = async (Request, DataModel) => {
 
         if (data.nModified === 0) {
             throw new Error("No document updated for the provided id");
-       
-            9999i    } catch (error) {
+        } else {
+            console.log(data);
+            return { status: "Update Success", data:data };
+        }
+    } catch (error) {
         console.error("Error in id With Update Service:", error);
         return { status: "fail", error: error.message };
     }
