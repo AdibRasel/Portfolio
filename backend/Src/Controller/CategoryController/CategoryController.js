@@ -7,44 +7,62 @@ const IDWithUpdateService = require("../../Service/Common/IDWithUpdateService");
 const UserAllCategoryDetailsService = require("../../Service/Common/UserAllCategoryDetailsService");
 const CreateService = require("../../Service/CreateService/CreateService");
 
-
-
-
-
-// Create Category Service // ক্যটেগরি তৈরি করবে
-exports.CreateCategory= async (req, res) => {
-    let Result = await CreateService(req, CategoryModel);
-    res.status(200).json(Result);
+// Create Category Service
+exports.CreateCategory = async (req, res) => {
+    try {
+        const result = await CreateService(req, CategoryModel);
+        res.status(200).json(result);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 };
 
-// Find User All Category Details // একজন ইউজারের সকল ক্যটেগরি শো করবে
-exports.UserAllCategoryDetails= async (req, res) => {
-    let Result = await UserAllCategoryDetailsService(req, CategoryModel);
-    res.status(200).json(Result);
+// Find User All Category Details
+exports.UserAllCategoryDetails = async (req, res) => {
+    try {
+        const result = await UserAllCategoryDetailsService(req, CategoryModel);
+        res.status(200).json(result);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 };
 
-// Category Full Details // একটি ক্যটেগরির সকল তথ্য শো করবে। 
-exports.CategoryFullDetails= async (req, res) => {
-    let Result = await IDWithDetailsService(req, CategoryModel);
-    res.status(200).json(Result);
+// Category Full Details
+exports.CategoryFullDetails = async (req, res) => {
+    try {
+        const result = await IDWithDetailsService(req, CategoryModel);
+        res.status(200).json(result);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 };
 
-
-// Category Full Details With All Post // একটি ক্যটেগরির সকল তথ্য শো করবে এবং সেই ক্যটেগরির সকল পোস্ট শো করবে।
-exports.CategoryFullDetailsWithAllPost= async (req, res) => {
-    let Result = await CategoryFullDetailsWithAllPost(req, CategoryModel, PostModel);
-    res.status(200).json(Result);
+// Category Full Details With All Post
+exports.CategoryFullDetailsWithAllPost = async (req, res) => {
+    try {
+        const result = await CategoryFullDetailsWithAllPost(req, CategoryModel, PostModel);
+        res.status(200).json(result);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 };
 
-
-//Category Delete  
-exports.CategoryDelete= async (req, res) => {
-    let Result = await IDWithDeleteService(req, CategoryModel);
-    res.status(200).json(Result);
+// Category Delete
+exports.CategoryDelete = async (req, res) => {
+    try {
+        const result = await IDWithDeleteService(req, CategoryModel);
+        res.status(200).json(result);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 };
 
-//Category Update  
-exports.CategoryUpdate= async (req, res) => {
-    let Result = await IDWithUpdateService(req, CategoryModel);
-    res.status(200).json(Result);
+// Category Update
+exports.CategoryUpdate = async (req, res) => {
+    try {
+        const result = await IDWithUpdateService(req, CategoryModel);
+        res.status(200).json(result);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 };
