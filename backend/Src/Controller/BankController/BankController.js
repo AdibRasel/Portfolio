@@ -7,6 +7,7 @@ const ActiveMailService = require("./ActiveMailService");
 const ActivePaginationBankList = require("./ActivePaginationBankList");
 const AllBankInfo = require("./AllBankInfo");
 const BankRegistrationCreateService = require("./BankRegistrationCreateService");
+const BankUpdateService = require("./BankUpdateService");
 const DeleteBank = require("./DeleteBank");
 const PendingPaginationBankList = require("./PendingPaginationBankList");
 const ReadBank = require("./ReadBank");
@@ -56,7 +57,7 @@ exports.ActiveBankListPagination = async (req, res) => {
 
 // Active Bank List
 exports.UpdateBank = async (req, res) => {
-    let Result = await IDWithUpdateService(req, BankModel);
+    let Result = await BankUpdateService(req, BankModel);
     res.status(200).json(Result);
 };
 
